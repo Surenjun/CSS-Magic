@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 50px;
+            width: 50px;
+            margin: 20px;
+        }
+        .skew {
+            transform: skew(45deg);
+            background: yellowgreen;
+        }
+        .scale {
+            /* transform: scale(2); */
+            transform: matrix(2, 0, 0, 2, 0, 0);
+            background: red;
+        }
+        .translate {
+            /* transform: translate(30px, 30px); */
+            /* transform: matrix(1, 0, 0, 1, 30, 30); */
+            background: rgb(89, 94, 78);
+        }
+        .rotate {
+            transform: rotate(45deg);
+            /* transform: matrix(cosB, sinB, -sinB, cosB, 0, 0); */
+            background: blue;
+        }
+        /* 
+            matrix(a, b, c, d, e, f)
+         */
+        /* 
+            tranlate的推导
+            (x, y, 1)移动(x + 30, y + 30, 1)
+            matrix(ax + cy + e, bx + dy + f, 1)
+            x + 30 === ax + cy + e
+            y + 30 = bx + dy + f
+            matrix(1, 0, 0, 1, 30, 30)
+         */
+
+         /* 
+            scale的推导
+            (x, y, 1)缩放(2x, 2y, 1)
+            matrix(ax + cy + e, bx + dy + f, 1)
+            2x = ax + cy + e
+            2y = bx + dy + f
+            matrix(2, 0, 0, 2, 0, 0)
+          */
+          /* 
+            rotate的推导
+            原来的角度A，旋转角度为B, p是边长
+            开始坐标x = p * cosA, y = p * sinA
+            旋转后的坐标x1 = p * cos(A + B), y1 = p * sin(A + B)
+            x1 = p * cos(A + B) = p(cosA * cosB - sinA * sinB
+                                = x * cosB - y * sinB
+
+            y1 = p * sin(A + B) = p(sinA * cosB + cosA * sinB)
+                                = x * sinB + y * cosB
+
+            matrix(ax + cy + e, bx + dy + f, 1)
+            x * cosB - y * sinB = ax + cy + e
+            x * sinB + y * cosB = bx + dy + f
+            matrix(cosB, sinB, -sinB, cosB, 0, 0)
+
+           */
+
+           /* 
+            skew推导
+            沿着X轴拉伸A度
+            原来的坐标(x, y)
+            拉伸后的坐标(x + y * tanA, y)
+            matrix(ax + cy + e, bx + dy + f, 1)
+            ax + cy + e = x + y * tanA
+            bx + dy + f = y
+            matrix(1, 0, tanA, 1, 0, 0)
+
+            沿着Y轴拉伸B度
+            原来的坐标(x, y)
+            拉伸后的坐标(x, y + x * tanB)
+            matrix(ax + cy + e, bx + dy + f, 1)
+            ax + cy + e = x
+            bx + dy + f = y + x * tanB
+            matrix(1, tanB, 0, 1, 0, 0)
+
+
+            matrix(1, tanB, tanA, 1, 0, 0)
+            */
+
+           
+    </style>
+</head>
+<body>
+    <div class="box skew">拉伸</div>
+    <div class="box scale">缩放</div>
+    <div class="box translate">位移</div>
+    <div class="box rotate">旋转</div>
+
+</body>
+</html>

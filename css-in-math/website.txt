@@ -1,0 +1,13 @@
+https://daneden.github.io/animate.css/
+http://www.dowebok.com/demo/2014/98/
+http://leaverou.github.io/animatable/
+贝塞尔曲线
+http://www.cubic-bezier.com
+http://www.css3beziercurve.net/
+http://www.roblaplaca.com/examples/bezierBuilder/#
+http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js
+
+https://www.html.cn/tool/css3Preview/Transform-Matrix.html
+https://blog.csdn.net/tracy_frog/article/details/82936824
+http://ds-overdesign.com/transform/matrix3d.html
+https://github.com/Zhangdroid/CSS-Matrix3d
